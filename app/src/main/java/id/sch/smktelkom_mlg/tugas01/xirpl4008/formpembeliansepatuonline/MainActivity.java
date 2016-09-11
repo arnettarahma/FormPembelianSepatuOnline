@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doClick() {
-        String hasil = "Anda telah berhasil melakukan transaksi beli sepatu jenis " + spJenisSepatu.getSelectedItem().toString() +
+        String hasil = etNama.getText().toString() + " telah berhasil melakukan transaksi beli sepatu jenis " + spJenisSepatu.getSelectedItem().toString() +
                 " dengan kode sepatu " + etKodeSepatu.getText().toString() + " ukuran ";
         int starlen = hasil.length();
         if (cb36.isChecked()) hasil += cb36.getText() + " ,";
