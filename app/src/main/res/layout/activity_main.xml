@@ -14,13 +14,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="id.sch.smktelkom_mlg.tugas01.xirpl4008.formpembeliansepatuonline.MainActivity">
 
-    <TextView
+        <TextView
         android:id="@+id/tvTitle"
+            style="@style/Base.TextAppearance.AppCompat.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Form Pembelian Sepatu Online" />
+            android:text="Form Pembelian Sepatu Online" />
 
-    <EditText
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/shoes" />
+
+        <EditText
         android:id="@+id/etNama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -43,13 +50,13 @@
         android:layout_gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvjenis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text" />
+        android:text="Jenis Sepatu" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spJenisSepatu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
@@ -153,11 +160,11 @@
             android:text="COD" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnBeli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="New Button" />
+            android:text="Beli" />
     </RadioGroup>
 </LinearLayout>
 </ScrollView>
