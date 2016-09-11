@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="jenis">
+        <item>Flat Shoes</item>
+        <item>Wedges</item>
+        <item>Sneakers</item>
+        <item>Stiletto</item>
+        <item>Boots</item>
+        <item>Heels</item>
+        <item>Oxford</item>
+        <item>Kets</item>
+        <item>Sepatu Sekolah</item>
+    </string-array>
+</resources>
