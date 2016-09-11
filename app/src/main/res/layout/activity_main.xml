@@ -70,7 +70,8 @@
                 android:id="@+id/etKodePos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kode Pos" />
+                android:hint="Kode Pos"
+                android:inputType="numberSigned" />
         </android.support.design.widget.TextInputLayout>
 
     <TextView
@@ -158,6 +159,7 @@
         android:text="Cara Pembayaran" />
 
     <RadioGroup
+        android:id="@+id/rgCP"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -196,5 +198,11 @@
             android:layout_gravity="center_horizontal"
             android:text="Beli" />
     </RadioGroup>
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/tvHasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </LinearLayout>
 </ScrollView>

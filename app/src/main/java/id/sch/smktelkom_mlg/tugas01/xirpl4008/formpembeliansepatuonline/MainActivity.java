@@ -7,14 +7,16 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tvTitle, tvJenis, tvNosep, tvCP;
+    TextView tvTitle, tvJenis, tvNosep, tvCP, tvHasil;
     EditText etNama, etNotel, etAlamat, etKodePos, etKodeSepatu;
     Spinner spJenisSepatu;
     CheckBox cb36, cb37, cb38, cb39, cb40, cb41, cb42;
+    RadioGroup rgCP;
     RadioButton rbBCA, rbBNI, rbMandiri, rbCOD;
     Button btnBeli;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         tvJenis = (TextView) findViewById(R.id.tvJenis);
         tvNosep = (TextView) findViewById(R.id.tvNosep);
         tvCP = (TextView) findViewById(R.id.tvCP);
+        tvHasil = (TextView) findViewById(R.id.tvHasil);
         etNama = (EditText) findViewById(R.id.etNama);
         etNotel = (EditText) findViewById(R.id.etNotel);
         etAlamat = (EditText) findViewById(R.id.etAlamat);
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         cb40 = (CheckBox) findViewById(R.id.cb40);
         cb41 = (CheckBox) findViewById(R.id.cb41);
         cb42 = (CheckBox) findViewById(R.id.cb42);
+        rgCP = (RadioGroup) findViewById(R.id.rgCP);
         rbBCA = (RadioButton) findViewById(R.id.rbBCA);
         rbBNI = (RadioButton) findViewById(R.id.rbBNI);
         rbMandiri = (RadioButton) findViewById(R.id.rbMandiri);
@@ -55,8 +59,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doClick() {
-        if (isValid()) {
+        String hasil = "Anda telah berhasil melakukan transaksi beli sepatu jenis " + spJenisSepatu.getSelectedItem().toString() +
+                " dengan kode sepatu " + etKodeSepatu.getText().toString() + " ukuran ";
+        int starlen = hasil.length();
+        if (cb36.isChecked()) hasil += cb36.getText() + " ,";
+        if (cb37.isChecked()) hasil += cb37.getText() + " ,";
+        if (cb38.isChecked()) hasil += cb38.getText() + " ,";
+        if (cb39.isChecked()) hasil += cb39.getText() + " ,";
+        if (cb40.isChecked()) hasil += cb40.getText() + " ,";
+        if (cb41.isChecked()) hasil += cb41.getText() + " ,";
+        if (cb42.isChecked()) hasil += cb42.getText() + " ,";
+        if (hasil.length() == starlen) hasil += "Tidak ada pada pilihan";
 
+        tvHasil.setText(hasil);
+
+        if (isValid()) {
         }
     }
 
@@ -93,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             etKodePos.setError("Kode pos belum diisi");
             valid = false;
         } else if (kodepos.length() != 5) {
-            etKodePos.setError("Pasrikan kode pos anda 5 digit");
+            etKodePos.setError("Pastikan kode pos anda 5 digit");
             valid = false;
         } else {
             etKodePos.setError(null);
