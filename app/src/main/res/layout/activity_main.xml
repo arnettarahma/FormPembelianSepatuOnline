@@ -83,12 +83,18 @@
         android:id="@+id/spJenisSepatu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="jenis" />
+        android:entries="@array/jenis" />
 
-    <EditText
-        android:id="@+id/etKodeSepatu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etKodeSepatu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kode Sepatu" />
+        </android.support.design.widget.TextInputLayout>
 
     <TextView
         android:id="@+id/tvNosep"
